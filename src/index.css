@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -118,5 +118,55 @@
   .scrollbar-thin::-webkit-scrollbar-thumb {
     background: hsl(var(--border));
     border-radius: 3px;
+  }
+}
+
+/* ---------- ZR EDGE marketing site theme ---------- */
+@layer base {
+  .zr-theme {
+    --zr-bg: 240 8% 4%;
+    --zr-surface: 240 8% 7%;
+    --zr-line: 240 8% 16%;
+    --zr-text: 0 0% 100%;
+    --zr-muted: 220 9% 68%;
+    --zr-blue: 208 100% 50%;
+    --zr-orange: 25 100% 50%;
+    --zr-gradient: linear-gradient(135deg, hsl(var(--zr-blue)), hsl(var(--zr-orange)));
+    --zr-glow-blue: 0 0 60px -12px hsl(var(--zr-blue) / 0.65);
+    --zr-glow-orange: 0 0 60px -12px hsl(var(--zr-orange) / 0.55);
+    background-color: hsl(var(--zr-bg));
+    color: hsl(var(--zr-text));
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .zr-glass {
+    background: linear-gradient(160deg, hsl(0 0% 100% / 0.06), hsl(0 0% 100% / 0.02));
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(0 0% 100% / 0.08);
+  }
+  .zr-grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--zr-line) / 0.55) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--zr-line) / 0.55) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+  .zr-gradient-text {
+    background: var(--zr-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .zr-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .zr-reveal.zr-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
