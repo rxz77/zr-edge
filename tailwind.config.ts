@@ -83,6 +83,15 @@ export default {
           dashboard: "hsl(var(--epic-dashboard))",
           api: "hsl(var(--epic-api))",
         },
+        zr: {
+          bg: "hsl(var(--zr-bg))",
+          surface: "hsl(var(--zr-surface))",
+          line: "hsl(var(--zr-line))",
+          text: "hsl(var(--zr-text))",
+          muted: "hsl(var(--zr-muted))",
+          blue: "hsl(var(--zr-blue))",
+          orange: "hsl(var(--zr-orange))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

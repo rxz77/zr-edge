@@ -9,6 +9,7 @@ import { PermissionsProvider } from "@/hooks/use-permissions";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { DashboardLayout } from "@/components/DashboardLayout";
 import LandingPage from "./pages/LandingPage";
+import ZrEdgeLanding from "./pages/ZrEdgeLanding";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
@@ -27,7 +28,8 @@ const App = () => (
             <PermissionsProvider>
               <Routes>
                 {/* Public routes */}
-                <Route path="/" element={<LandingPage />} />
+                <Route path="/" element={<ZrEdgeLanding />} />
+                <Route path="/sprint" element={<LandingPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/forgot-password" element={<ForgotPasswordPage />} />
