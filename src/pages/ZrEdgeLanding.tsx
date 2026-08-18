@@ -721,19 +721,9 @@ function Hero({ lang }: { lang: Lang }) {
               </div>
             </Reveal>
 
-            <Reveal delay={320}>
-              <dl className="mt-14 grid grid-cols-2 gap-6 sm:grid-cols-4">
-                {t.stats.map((s) => (
-                  <div key={s.label}>
-                    <dt className="text-2xl font-extrabold tracking-tight text-zr-text">{s.value}</dt>
-                    <dd className="mt-1 text-xs leading-snug text-zr-muted">{s.label}</dd>
-                  </div>
-                ))}
-              </dl>
-            </Reveal>
           </div>
 
-          {/* Glassmorphism dashboard mockup */}
+          {/* Abstract 3D data-network visual */}
           <Reveal delay={200}>
             <div className="relative">
               <div
@@ -741,73 +731,22 @@ function Hero({ lang }: { lang: Lang }) {
                 style={{ backgroundImage: "var(--zr-gradient)" }}
                 aria-hidden="true"
               />
-              <div className="zr-glass relative rounded-2xl p-4 shadow-2xl">
-                <div className="flex items-center gap-2 border-b border-white/10 pb-3">
-                  <span className="h-2.5 w-2.5 rounded-full bg-zr-orange/80" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
-                  <span className="ml-3 font-mono text-[11px] text-zr-muted">{t.mock.title}</span>
-                </div>
-
-                <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                  {t.mock.cards.map((c) => (
-                    <div key={c.k} className="rounded-xl border border-white/10 bg-white/[0.03] p-3">
-                      <p className="text-[11px] uppercase tracking-wide text-zr-muted">{c.k}</p>
-                      <p className="mt-1 text-xl font-bold text-zr-text">{c.v}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-3 rounded-xl border border-white/10 bg-white/[0.03] p-4">
-                  <div className="flex items-center justify-between">
-                    <p className="text-xs font-semibold text-zr-text">{t.mock.chart}</p>
-                    <span className="rounded-md bg-zr-blue/15 px-2 py-0.5 font-mono text-[10px] text-zr-blue">{t.mock.live}</span>
-                  </div>
-                  <svg viewBox="0 0 320 130" className="mt-3 h-32 w-full" role="img" aria-label={t.mock.chart}>
-                    <defs>
-                      <linearGradient id="zrArea" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="hsl(var(--zr-blue))" stopOpacity="0.45" />
-                        <stop offset="100%" stopColor="hsl(var(--zr-blue))" stopOpacity="0" />
-                      </linearGradient>
-                    </defs>
-                    {[0, 1, 2, 3].map((i) => (
-                      <line key={i} x1="0" y1={26 * i + 14} x2="320" y2={26 * i + 14} stroke="hsl(var(--zr-line))" strokeWidth="1" />
-                    ))}
-                    <path d="M0 100 L52 78 L104 88 L156 46 L208 60 L260 28 L320 40 L320 130 L0 130 Z" fill="url(#zrArea)" />
-                    <path
-                      d="M0 100 L52 78 L104 88 L156 46 L208 60 L260 28 L320 40"
-                      fill="none"
-                      stroke="hsl(var(--zr-blue))"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M0 118 L52 108 L104 112 L156 96 L208 104 L260 84 L320 92"
-                      fill="none"
-                      stroke="hsl(var(--zr-orange))"
-                      strokeWidth="2"
-                      strokeDasharray="5 5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-
-                <div className="mt-3 space-y-2">
-                  {t.mock.rows.map((r, i) => (
-                    <div key={r.id} className="flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2">
-                      <span className="font-mono text-xs text-zr-muted">{r.id}</span>
-                      <span
-                        className={`rounded-md px-2 py-0.5 text-[10px] font-semibold ${
-                          i === 0 ? "bg-zr-blue/15 text-zr-blue" : "bg-zr-orange/15 text-zr-orange"
-                        }`}
-                      >
-                        {r.status}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+              <div className="zr-glass relative overflow-hidden rounded-2xl p-2 shadow-2xl">
+                <img
+                  src={heroVisual}
+                  alt={lang === "pl" ? "Abstrakcyjna wizualizacja sieci danych i siatki GIS" : "Abstract data network and GIS grid visualization"}
+                  width={1280}
+                  height={1280}
+                  className="h-full w-full rounded-xl object-cover"
+                />
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-2xl"
+                  style={{ background: "radial-gradient(120% 80% at 50% 110%, hsl(var(--zr-bg) / 0.85), transparent 60%)" }}
+                  aria-hidden="true"
+                />
               </div>
             </div>
+
           </Reveal>
         </div>
       </div>
