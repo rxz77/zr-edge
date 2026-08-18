@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import heroVisual from "@/assets/zr-hero-visual.jpg";
 import {
   ArrowRight,
   ChevronDown,
